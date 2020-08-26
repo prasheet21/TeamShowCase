@@ -150,7 +150,7 @@ function printList(){
     }
 }
 
-function addNewNews(news){
+const addNewNews=news =>{
     arrNews.unshift(news) ;
     printMarquee() ;
     printList() ;
@@ -179,7 +179,7 @@ function updIcon(id){
     id = updatedNews ;
     
     
-    doneBtn.onclick = function(){
+    doneBtn.onclick = () => {
         if (updatedNews.value.trim() != ""){
             arrNews.splice(index.value , 1 , updatedNews.value) ;        
             id.parentNode.replaceChild(tempId.parentNode , doneBtn) ;
@@ -190,7 +190,7 @@ function updIcon(id){
     }
 }
 
-function remIcon(id){
+const remIcon = id => {
     console.log(id.parentNode.parentNode)
     console.log("I am in ") ;
     var ul = document.querySelector("#newNewsList") ;
@@ -205,7 +205,7 @@ function remIcon(id){
 
 }
 
-function printMarquee(){
+const printMarquee = () => {
     var doc = document.getElementById("marquee") ;
     doc.innerHTML = "" ;
     for(var allNews of arrNews){
@@ -215,9 +215,10 @@ function printMarquee(){
     }
 }
 
-function newsAdd(){
+const newsAdd =() => {
     createNewsInsertPanel() ;   
     }
+    
 //student section
 
 function createCardWithDetails(name , designation , linkedin , facebook , github) {
